@@ -1,0 +1,156 @@
+@charset "UTF-8";
+
+:root {
+    --NotoSans : "Noto Sans KR", sans-serif;
+    --Montserrat : "Montserrat", sans-serif;
+    --Montaga : "Montaga", serif;
+    --main-color : rgb(194, 122, 52);
+}
+body { font-family: "Noto Sans KR", "Montserrat", "Montaga", serif; font-size: 1.6rem; line-height: 1.5; color: #000; overflow: hidden;}
+.inner { max-width: 1640px; margin: 0 auto; padding: 0 20px;}
+#wrap { overflow-x: hidden;}
+
+/* #header  */
+#header {position: absolute; left: 0;top: 0; width: 100%; color: #fff;  z-index: 10; padding-top: 20px; }
+#header .inner { display: flex; justify-content: space-between; align-items: center; font-family: var(--Montserrat); }
+#header .inner h1 a { display: block; width: 170px; height: 60px; font-size: 0; background: url(../images/logo.png);}
+#header .gnb { display: flex;}
+#header .gnb > li > a { display: block; padding: 10px 50px; font-size: 2rem; }
+#header .ham { display: none; cursor: pointer; }
+#header .ham p { width: 30px; height: 3px; background: #fff; margin-bottom: 10px;}
+#header .reservation { padding: 10px 20px 10px 60px; border: 1px solid #fff; background: url(../images/icon_reservation.png)no-repeat 20px center;}
+
+#header .mgnb_wrap { position: fixed; left: 100%; top: 0; width: 100%; height: 100%; background: #fff; font-size: 3rem; font-family: var(--Montaga); padding: 150px 50px;color: #000;}
+#header .mgnb { border-top: 1px solid #000;}
+#header .mgnb li {border-bottom: 1px solid rgba(0, 0, 0, 0.2); padding: 15px 0;}
+#header .mgnb_wrap .close { position: absolute; right: 50px; top: 100px;  background: transparent; font-size: 0; cursor: pointer;  border: 0;}
+#header .mgnb_wrap .close::after { content: ""; display: block; width: 50px; height: 1px; transform: rotate(45deg); background: #000;}
+#header .mgnb_wrap .close::before { content: ""; display: block; width: 50px; height: 1px; transform: rotate(-45deg); background: #000;}
+
+
+@media (max-width:1024px) {
+    #header .inner h1 a { display: block; width: 130px; height: 45px; font-size: 0; background: url(../images/logo.png) center / 100%;}
+
+    #header .gnb { display: none;}
+    #header .ham { display: block;} 
+    #header .reservation { position: absolute; top: 80vh; left: 50%; transform: translateX(-50%);}
+}
+
+
+/* visual  */
+.visual { position: relative; }
+.visual video {position: absolute; left: 0; top: 0; height: 100%; width: 100%; object-fit: cover;}
+.visual .visual_txt { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: #fff; text-align: center;}
+.visual .visual_txt h2 {text-wrap: nowrap; font-size: 8rem; font-family: var(--Montaga); padding-bottom: 20px; font-weight: 400;}
+.visual .visual_txt p { font-size: 2.5rem;}
+
+@media (max-width:1200px) {
+    .visual .visual_txt h2 { font-size: 6.5rem;}
+    .visual .visual_txt p { font-size: 2rem;}
+}
+
+@media (max-width:770px) {
+    .visual .visual_txt h2 { font-size: 5rem;}
+    .visual .visual_txt p { font-size: 1.6rem;}
+}
+@media (max-width:580px) {
+    .visual .visual_txt h2 { font-size: 4rem;}
+    .visual .visual_txt p { font-size: 1.4rem;}
+}
+
+
+/* 공통 */
+
+section h2::before { content: "Restaurant o’neul"; display: block; font-family: var(--Montserrat); color: var(--main-color); font-size: 1.4rem; letter-spacing: 5px; }
+.visual h2::before {content: ""; display: none;}
+section h2 { font-size: 6rem; font-family: var(--Montaga);  font-weight: 400; padding-bottom: 30px;}
+
+@media (max-width:1020px) { 
+    section h2 { font-size: 5rem;} 
+}
+
+
+/* value 1024 쯤에 패딩 100px 0 */ 
+.value .inner { display: flex; justify-content: space-between; align-items: center;}
+
+.value .value_txt { text-align: left; }
+.value .value_txt h2 { padding-bottom: 30px;}
+.value .value_txt p { padding-bottom: 30px; opacity: 0.6; word-break: keep-all;}
+.value .value_txt .view_more a { display: inline-block; padding: 10px 50px; background: #000; color: #fff; font-family: var(--Montaga); transition: all 0.5s;}
+.value .value_txt .view_more:hover a { background: var(--main-color);}
+.value .value_img { width: calc(100% / 2);}
+.value .value_img img { width: 100%;}
+
+@media (max-width:1024px) {  
+    .value { padding: 100px 0;}   
+    .value .inner { display: block; }
+    .value .value_txt { text-align: center; padding-bottom: 30px;}
+    .value .value_img { width: 100%;}
+}
+@media (max-width:900px) {  
+    .value { padding: 80px 0;}
+}
+@media (max-width:770px) {    
+    .value .value_txt .view_more a { padding: 10px 30px; font-size: 1.4rem;}
+    .value .value_txt p { font-size: 1.4rem;}
+}
+
+
+
+/*  menu  */
+.menu { background: rgba(194, 122, 52,0.1); text-align: center;  }
+.menu h2 { text-align: center; }
+.menu .menu_list { color: #fff;}
+.menu .menu_list li:nth-child(odd) { margin-top: 30px; }
+.menu .menu_list li img{ width: 100%;}
+
+.menu .menu_list li a:before { content: ""; transition: all 0.5s; position: absolute; top: 50%; left: 50%; transform: translateY(-50%); width: 0; height: 100%; background: var(--main-color);}
+.menu .menu_list li:hover a::before {width: 100%; left: 0; z-index: -1;}
+.menu .menu_list li a {position: absolute; left: 0; top: 50%; transform: translateY(-50%); font-size: 3rem; font-family: var(--Montaga); text-wrap: nowrap; width: 100%; padding: 10px 0; } 
+
+@media (max-width:1024px) { 
+    .menu { padding: 100px 20px;}     
+}
+@media (max-width:900px) {  
+    .menu { padding: 80px 20px;}
+}
+@media (max-width:570px) {       
+    .menu .menu_list li:nth-child(odd) { margin-top: 0; } 
+}
+
+
+
+/*  Room  */
+.room h2 { text-align: center;}
+.room .room_list img { width: 100%;}
+.room .room_list li { position: relative;}
+.room .room_list .room_txt { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); padding: 15px 30px 0; background: #fff; font-size: 2rem; font-family: var(--Montserrat);} 
+
+@media (max-width:1200px) {  
+    .room { padding: 100px 0;}
+}
+@media (max-width:900px) {  
+    .room { padding: 80px 0;}
+}
+
+
+
+/* footer  */
+#footer {background: #383431; padding: 100px 0;}
+#footer .inner { display: flex; justify-content: space-between;  color: #9A8E87;}
+#footer .footer_txt { padding: 20px 0;}
+#footer .footer_txt span:nth-of-type(even) { opacity: 0.5; padding-left: 10px;} /* nth-of-type */
+#footer .footer_left .copy { font-size: 1.4rem; font-family: var(--Montaga); opacity: 0.5; }
+#footer .sns { display: flex; gap: 20px;}
+
+
+#fp-nav ul li .fp-tooltip  { color: #000;}
+#fp-nav ul li:last-child { display: none;}/* 마지막 버튼 없애기 */
+
+@media (max-width:1020px) { 
+    #footer .inner { display:block; text-align: center;} 
+    #footer .sns { justify-content: center; margin-top: 30px;}
+
+
+    #fp-nav ul li { display: none;}
+}
