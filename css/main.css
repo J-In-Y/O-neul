@@ -12,7 +12,7 @@ body { font-family: "Noto Sans KR", "Montserrat", "Montaga", serif; font-size: 1
 
 /* #header  */
 #header {position: absolute; left: 0;top: 0; width: 100%; color: #fff;  z-index: 10; padding-top: 20px; }
-#header .inner { display: flex; justify-content: space-between; align-items: center; font-family: var(--Montserrat); position:relative; }
+#header .inner { display: flex; justify-content: space-between; align-items: center; font-family: var(--Montserrat); }
 #header .inner h1 a { display: block; width: 170px; height: 60px; font-size: 0; background: url(../images/logo.png);}
 #header .gnb { display: flex;}
 #header .gnb > li > a { display: block; padding: 10px 50px; font-size: 2rem; }
@@ -155,3 +155,4 @@ section h2 { font-size: 6rem; font-family: var(--Montaga);  font-weight: 400; pa
     #fp-nav ul li { display: none;}
 
 }
+
