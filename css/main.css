@@ -33,7 +33,7 @@ body { font-family: "Noto Sans KR", "Montserrat", "Montaga", serif; font-size: 1
 
     #header .gnb { display: none;}
     #header .ham { display: block;} 
-    #header .reservation { position: absolute; top: 80vh; left: 50%; transform: translateX(-50%);}
+    #header .reservation { position: absolute; top: 100vh; left: 50%; transform: translate(-50%,-100px);}
 }
 
 
@@ -155,4 +155,5 @@ section h2 { font-size: 6rem; font-family: var(--Montaga);  font-weight: 400; pa
     #fp-nav ul li { display: none;}
 
 }
+
 
